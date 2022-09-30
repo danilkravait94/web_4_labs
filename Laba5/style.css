@@ -1,0 +1,32 @@
+.my-2 {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex-around-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-between-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.a-center {
+  text-align: center;
+}
+
+#name, #variant, #group , #faculty , #birthdate {
+  padding: 5px;
+  width: 200px;
+}
+
+#response-block {
+  width: 300px;
+}
