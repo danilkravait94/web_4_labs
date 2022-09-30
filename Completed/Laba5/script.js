@@ -1,3 +1,5 @@
+let lastRandomColor = '';
+
 function submitForm() {
     let isNotValid = false;
     const nameRegex = /[А-Я][а-я]+\s+[А-Я]\.\s+[А-Я]\./;
@@ -11,6 +13,8 @@ function submitForm() {
         alert("Введіть правильне ПІБ");
         isNotValid = true
         nameElem.style.border = '1px solid red'
+    } else {
+        nameElem.style.border = '1px solid green'
     }
 
     const variantElem = document.getElementById('variant');
@@ -21,6 +25,8 @@ function submitForm() {
         }
         variantElem.style.border = '1px solid red'
         isNotValid = true
+    } else {
+        variantElem.style.border = '1px solid green'
     }
 
     const groupElem = document.getElementById('group');
@@ -31,6 +37,8 @@ function submitForm() {
         }
         groupElem.style.border = '1px solid red'
         isNotValid = true
+    } else {
+        groupElem.style.border = '1px solid green'
     }
 
     const facultyElem = document.getElementById('faculty');
@@ -41,6 +49,8 @@ function submitForm() {
         }
         facultyElem.style.border = '1px solid red'
         isNotValid = true
+    } else {
+        facultyElem.style.border = '1px solid green'
     }
 
     const birthdateElem = document.getElementById('birthdate');
@@ -54,6 +64,8 @@ function submitForm() {
     }
     if (isNotValid) {
         return false;
+    } else {
+        birthdateElem.style.border = '1px solid green'
     }
 
     document.getElementById('name-value').innerHTML = name;
@@ -68,3 +80,77 @@ function submitForm() {
 
     return false;
 }
+
+function createTable() {
+    let rows = 6;
+    let cols = 6;
+    let table = document.getElementById("changing-table");
+    table.innerHTML = '';
+    for (let i = 0; i < rows; i++) {
+        var row = table.insertRow(i);
+        for (let j = 0; j < cols; j++)
+        row.insertCell(j);
+    }
+}
+function printNumbers() {
+    let rows = document.getElementById("changing-table").children[0].children;
+    for (let i = 0; i < rows.length; i++) {
+        let cols = rows[i].children;
+        for (let j = 0; j < cols.length; j++) {
+                let cell = cols[j];
+                cell.innerHTML = `${i*6+j+1}`;
+                cell.addEventListener("click", changeColorByClick)
+                cell.addEventListener("mouseover", changeColorByHover)
+                cell.addEventListener("mouseout", changeColorByUnhover)
+                cell.addEventListener("dblclick", changeColorByDbclick)
+        }
+    }
+}
+
+function changeColorByClick(e) {
+    if (e.srcElement.innerHTML !== '9') {
+        return;
+    }
+    this.style.background = this.style.background === 'rgb(179, 106, 201)' ? 'white' : 'rgb(179, 106, 201)';
+}
+
+function changeColorByHover(e) {
+    if (e.srcElement.innerHTML !== '9') {
+        return;
+    }
+
+    this.style.background = random_rgba()
+}
+
+function changeColorByUnhover(e) {
+    if (e.srcElement.innerHTML !== '9') {
+        return;
+    }
+ 
+    if (this.style.background === lastRandomColor) {
+        this.style.background = 'white'
+    }
+}
+
+function changeColorByDbclick() {
+    if (this.innerHTML !== '9') {
+        return;
+    }
+    const values = ['9', '21', '33'];
+    const tds = document.querySelectorAll('td')
+    tds.forEach((td) => {
+        if(values.includes(td.innerHTML)) {
+            td.style.background = td.style.background === 'rgb(179, 106, 201)' ? 'white' : 'rgb(179, 106, 201)';
+        }
+    })
+}
+
+function random_rgba() {
+    var o = Math.round, r = Math.random, s = 255;
+    const color = 'rgb(' + o(r()*s) + ', ' + o(r()*s) + ', ' + o(r()*s) + ')';
+    lastRandomColor = color;
+    return color;
+}
+
+createTable()
+printNumbers()
