@@ -111,7 +111,7 @@ function changeColorByClick(e) {
     if (e.srcElement.innerHTML !== '9') {
         return;
     }
-    this.style.background = this.style.background === 'rgb(179, 106, 201)' ? 'white' : 'rgb(179, 106, 201)';
+    this.style.background = document.getElementById("palit").value;
 }
 
 function changeColorByHover(e) {
