@@ -1,0 +1,46 @@
+{
+    "fruits": [
+        {
+            "title": "Apple",
+            "id": 1,
+            "image": "apple.png",
+            "price": 10
+        },
+        {
+            "title": "Brocolli",
+            "id": 2,
+            "image": "brocolli.png",
+            "price": 64
+        },
+        {
+            "title": "Cherry",
+            "id": 3,
+            "image": "cherry.png",
+            "price": 35
+        },
+        {
+            "title": "Orange",
+            "id": 4,
+            "image": "orange.png",
+            "price": 74
+        },
+        {
+            "title": "Pineapple",
+            "id": 5,
+            "image": "pineapple.png",
+            "price": 34
+        },
+        {
+            "title": "Strawberry",
+            "id": 6,
+            "image": "strawberry.png",
+            "price": 78
+        },
+        {
+            "title": "Watermelon",
+            "id": 7,
+            "image": "watermelon.png",
+            "price": 45
+        }
+    ]
+}
