@@ -1,0 +1,48 @@
+
+.item-desc {
+    text-align: center;
+    color: black;
+    align-items: center;
+    width: 25vw;
+    height: 7vw;
+    white-space: normal;
+    overflow: hidden;
+}
+
+.item-picture__img {
+    width: 25vw;
+    height: 25vw;
+}
+
+.item-picture {
+    width: 25vw;
+    height: 25vw;
+    vertical-align: bottom;
+}
+.item-title {
+    height: 4vw;
+    text-align: center;
+    font-size: 2vw;
+    color: black;
+}
+
+.item-title p {
+    margin: 0;
+    font-size: large;
+}
+
+.good-item {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(201, 201, 201);
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.catalog_rate{
+    margin: 0;
+    font-size: large;
+    width: 25vw;
+}
